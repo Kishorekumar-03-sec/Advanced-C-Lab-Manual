@@ -1,5 +1,8 @@
+```python
+Developed By  : Kishorekumar S
+Register No   :  212224040162
+```
 EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
-
 Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
 
@@ -15,37 +18,50 @@ Else
 6.	Return 0
  
 Program:
+```python
+#include <stdio.h>
+struct eligible {
+    int age;
+    char name[50];
+};
 
-        #include<stdio.h> 
-        struct eligib
-        {
-              int age;
-              char n[4];
-        };
-        int main()
-        {
-               struct eligib e;
-               scanf("%d%s",&e.age,e.n);
-               if(e.age<=6)
-               {
-                    printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
-               }
-               else
-               {
-                    printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
-               }
- 
-         }
+int main() {
+    int i, n;
+    
+    printf("Enter the number of people: ");
+    scanf("%d", &n);
+    struct eligible e[n];
 
+    for (i = 0; i < n; i++) {
+        printf("\nEnter name of person %d: ", i + 1);
+        scanf("%s", e[i].name);
+
+        printf("Enter age of person %d: ", i + 1);
+        scanf("%d", &e[i].age);
+    }
+
+    printf("\n--- Vaccine Eligibility Results ---\n");
+    for (i = 0; i < n; i++) {
+        printf("\nName: %s\n", e[i].name);
+        printf("Age: %d\n", e[i].age);
+
+        if (e[i].age > 6) {
+            printf("Vaccine Eligibility: Yes\n");
+        } else {
+            printf("Vaccine Eligibility: No\n");
+        }
+    }
+
+    return 0;
+}
+```
 
 Output:
 
-![437295418-875d7abd-3282-4d64-96f7-b69834282f0a](https://github.com/user-attachments/assets/bbf7f61d-81ff-47ae-a7d7-85e1e36215dd)
-
-
-
+![image](https://github.com/user-attachments/assets/19ba9a6a-a68b-49ce-a5f5-66b1228a8b50)
 Result:
 Thus, the program is verified successfully. 
+
 
 
 
@@ -63,39 +79,46 @@ Algorithm:
 7.	Return 0
  
 Program:
+```python
+#include <stdio.h>
+struct numbers {
+    int a;
+    int b;
+};
 
-       #include<stdio.h>
-       struct numbers{
-               int a;
-               int b;
-       }n;
-       int add(struct numbers n);
-       int main()
-       {
-           scanf("%d %d ",&n.a,&n.b);
-           printf("%d",add(n));
-       }
-       int add(struct numbers n)
-       {
-            return n.a+n.b;
-       }
+struct numbers add(struct numbers n) {
+    struct numbers result;
+    result.a = n.a + n.b;
+    result.b = 0; 
+    return result;
+}
 
+int main() {
+    struct numbers n, sum;
 
+    printf("Enter value for a: ");
+    scanf("%d", &n.a);
+
+    printf("Enter value for b: ");
+    scanf("%d", &n.b);
+    sum = add(n);
+
+    printf("Sum of a and b: %d\n", sum.a);
+
+    return 0;
+}
+```
 
 
 
 Output:
-   
-   ![437295527-c4fda8ea-7b67-47c2-9123-dfdae6e283a6](https://github.com/user-attachments/assets/22589bbf-cfd5-4a85-8783-af5a00ecfd99)
 
-
-
-
-
+![image](https://github.com/user-attachments/assets/fd84349d-d269-478a-893d-fb9eb7682316)
 
 
 Result:
 Thus, the program is verified successfully
+
 
 
  
@@ -122,43 +145,37 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-            #include <stdio.h>
-            int main()
-            {
-                 FILE *p;
-                 char name[30];
-                 scanf("%s",name);
-                 printf("%s File Created Successfully",name); 
-                 p=fopen("name","w");
-                 printf("\n%s File Opened",name);
-                 fclose(p);
-                 printf("\n%s File Closed",name);
-           }
-
-
+```python
+#include <stdio.h>
+int main()
+{
+    char name[50];
+    scanf("%s",name);
+    FILE *fp;
+    fp=fopen("Employee.txt","w");
+    if(fp != NULL)
+    {
+        printf("%s File Created Successfully\n",name);
+        printf("%s File Opened\n",name);
+    }
+    if(fp)
+    {
+        fclose(fp);
+        printf("%s File Closed",name);
+    }
+}
+```
 
 
 
 Output:
 
-
-
-![437295636-26ae7632-11c8-4c2e-9627-3848ad724e46](https://github.com/user-attachments/assets/86a2a691-e2f1-4bc7-b5f2-f0c8d098392b)
-
-
-
-
-
-
-
-
-
-
+![WhatsApp Image 2025-04-25 at 14 12 11_8178ae30](https://github.com/user-attachments/assets/6bfb6378-02d5-4459-ac53-c246ed72616e)
 
 Result:
 Thus, the program is verified successfully
  
+
 
 
 EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
@@ -182,45 +199,43 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-            #include <stdio.h>
-            int main()
-            {
-                 FILE *p;
-                 char name[20];
-                 int num;
-                 char text[50];
-                 scanf("%s%d",name,&num);
-                 p=fopen("name","w");
-                 printf("%s Opened",name);
-                 for(int i=0;i<num;i++)
-                 {
-                     scanf("%s",text); fputs(text,p);
-                 }
-                 printf("\nData added Successfully");
-
-            }
-
-
-
-
-
-
+```python
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    FILE*p;
+    char n[50];
+    scanf("%s",n);
+    p = fopen(n, "w");
+    if(p == NULL)
+        printf("File Not Created");
+    
+    else
+    {
+        printf("%s Opened",n);
+        int a;
+        scanf("%d",&a);
+        for(int i=0;i<a;i++)
+        {
+            char b[50];
+            scanf("%[^\n]s",b);
+            fprintf(p,"%s",b);
+        }
+    }
+    fclose(p);
+    printf("\nData added Successfully");
+}
+```
 
 
 Output:
 
-
-
-
-
-![437295751-4a926356-22df-4a11-a5f8-6f7b374e2a86](https://github.com/user-attachments/assets/612f8dfc-29a7-462f-9eea-4c419e98e649)
-
-
-
+![image](https://github.com/user-attachments/assets/09bbcc95-37a7-4861-801b-4beb2f46b5d5)
 
 Result:
 Thus, the program is verified successfully
+
 
 
 
@@ -257,54 +272,52 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```python
+#include <stdio.h>
+#include <stdlib.h>
 
-           #include <stdio.h>
-           #include <stdlib.h>
-           struct Subject
-           {
-               char name[20];
-               int marks;
-           };
-           int main()
-           {
-                int i,n;
-                scanf("%d",&n);
-                struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
-                if(s==NULL)
-                {
-                    printf("Memory Alocation Failed\n");
-                    return 1;
-                }
-                for(i=0;i<n;i++)
-                {
-                    scanf("%s %d",s[i].name,&s[i].marks);
-                }
-                for(i=0;i<n;i++)
-                {
-                    printf("%s  %d\n",s[i].name,s[i].marks);
-                }
-                free (s);
-    
-                return 0;
-           }
+struct Subject {
+    char name[50];
+    int marks;
+};
 
+int main() {
+    struct Subject *s;
+    int n, i;
+    printf("Enter the number of subjects: ");
+    scanf("%d", &n);
 
+    s = (struct Subject*)malloc(n * sizeof(struct Subject));
 
+    if (s == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1; 
+    }
 
+    for (i = 0; i < n; i++) {
+        printf("\nEnter name of subject %d: ", i + 1);
+        scanf("%s", s[i].name);
+        printf("Enter marks for %s: ", s[i].name);
+        scanf("%d", &s[i].marks);
+    }
+
+  
+    printf("\n--- Subject Details ---\n");
+    for (i = 0; i < n; i++) {
+        printf("Subject %d: %s\n", i + 1, s[i].name);
+        printf("Marks     : %d\n", s[i].marks);
+    }
+
+    free(s);
+
+    return 0;
+}
+```
 
 
 Output:
 
-
-
-![437295856-297a272e-1888-4dcc-a7ce-9b03c9c2bac3](https://github.com/user-attachments/assets/0d7d0e7c-f4d2-485e-a311-1d675cd3b2ca)
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/41847274-6ac9-42c0-a552-1df217553056)
 
 Result:
 Thus, the program is verified successfully
