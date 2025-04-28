@@ -1,4 +1,9 @@
-EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+```python
+Developed By  :  Kishorekumar S
+Register No   :  212224040162
+```
+
+EXP NO:6 A PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
 Aim:
 To write a C program print the lowercase English word corresponding to the number
 Algorithm:
@@ -15,67 +20,85 @@ Algorithm:
 4.	Exit the program.
  
 Program:
-
-             #include<stdio.h> 
-             #include<math.h>
-             int main()
-             {
-                  int n;
-                  scanf("%d",&n);
-                  if(n>=1 && n<=pow(4,3))
-                  {
-                  switch(n)
-                  {
-                    case 5:
-                    printf("seventy one");
-                    break;
-                    case 6:
-                    printf("seventy two");
-                    break;
-                    case 13:
-                    printf("seventy three");
-                    break;
-                    case 14:
-                    printf("seventy four");
-                    break;
-                    case 15:
-                    printf("seventy five");
-                    break;
-                    case 16:
-                    printf("seventy six");
-                    break;
-                    case 5:
-                    printf("seventy seven");
-                    break;
-                    case 6:
-                    printf("seventy eight");
-                    break;
-                    case 13:
-                    printf("seventy nine");
-                    break;
-                    default:
-                    printf("Greater than 13");
-                  }
-
-
-
-
-
-
-
-
+```python
+      #include<stdio.h> 
+      #include<math.h> 
+      int main()
+      {
+      int n; 
+      scanf("%d",&n);
+      if(n>=1 && n<=pow(4,3))
+      {
+      switch(n)
+      {
+      case 5:
+      {
+      printf("seventy one"); 
+      break;
+      }
+      case 6:
+      {
+      printf("seventy two"); 
+      break;
+      }
+      case 13:
+      {
+      printf("seventy three"); 
+      break;
+      }
+      case 14:
+      {
+      printf("seventy four"); 
+      break;
+      }
+      case 15:
+      {
+      printf("seventy five"); 
+      break;
+      }
+      case 16:
+      {
+      printf("seventy six"); 
+      break;
+      }
+      case 5:
+      {
+      printf("seventy seven"); 
+      break;
+      }
+       
+      case 6:
+      {
+      printf("seventy eight"); 
+      break;
+      }
+      case 13:
+      {
+      printf("seventy nine"); 
+      break;
+      }
+      default:
+      {
+      printf("Greater than 13");
+      }
+      }
+      }
+      }
+```
 Output:
 
 
-
-![437297701-64192d33-3f08-4411-8eb2-fc61a4c731b9](https://github.com/user-attachments/assets/f23cd987-cf0a-4c78-b874-b9ad0955744a)
+![image](https://github.com/user-attachments/assets/c30cd8c2-b9d8-41e7-a03d-46e2abe08d0d)
 
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program to print the lowercase English word corresponding to the number
+is verified successfully
+
+
  
-EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
+EXP NO:7 B PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
 Aim:
 To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
 Algorithm:
@@ -87,48 +110,40 @@ Algorithm:
 6.	End
  
 Program:
-
-
-       #include<stdio.h>
-       #include<string.h>
-       int main()
-       {
-             char a[50];
-             scanf("%s",a);
-             int l=strlen(a);
-             char h='0';
-             for(int i=0;i<4;i++)
-             {
-                 int c=0;
-                 for(int j=0;j<l;j++)
-                 {
-                     if(a[j]==h)
-                     {
-                        c+=1;
-                     }
-                 }
-                 printf("%d ",c); h++;
-             }
+```python
+      #include<stdio.h> 
+      #include<string.h> 
+      int main()
+      {
+      char a[50]; 
+      scanf("%s",a); 
+      int l=strlen(a); 
+      char h='0';
+      for(int i=0;i<4;i++)
+      {
+         int c=0;
+         for(int j=0;j<l;j++)
+         {
+           if(a[j]==h)
+         {
+         c+=1;
       }
-
-
-
+      }
+      printf("%d ",c); h++;
+      }
+      }
+```
 
 
 Output:
 
-![437297833-12bccdb8-b8b4-498f-aab1-a2cd31adfdcc](https://github.com/user-attachments/assets/e0c82402-1c5a-4817-9079-01f02706065c)
 
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/54eb062c-e08e-486e-9d93-706c8fbf99ba)
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3 is verified successfully.
+
 
 EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
 Aim:
@@ -148,65 +163,74 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
-
-#include<stdio.h> #include<string.h> #include<stdlib.h>
-int next_per(int n, char **s)
-{
-for(int i = n - 1 ; i > 0 ; i--) if(strcmp(s[i],s[i-1]) > 0)
-{
-int j=i+1;
-for(;j<n;j++) if (strcmp(s[j],s[i-1])<=0) break; char *t=s[i-1];
-s[i-1]=s[j-1];
-s[j-1]=t;
-for(;i<n-1;i++,n--)
-{
-t=s[i]; s[i]=s[n-1]; s[n-1]=t;
-}
-return 1;
-}
-for(int i=0;i<n-1;i++,n--)
-{
-char *t=s[i]; s[i]=s[n-1]; s[n-1]=t;
-}
-return 0;
-}
-int main()
-{
-char **s; int n;
-scanf("%d",&n); s=calloc(n,sizeof(char*)); for(int i=0;i<n;i++)
-{
-s[i]=calloc(n,sizeof(char*)*5); scanf("%s",s[i]);
-}
-do
-{
-for(int i=0;i<n;i++) printf("%s%c",s[i],i==n-1?'\n':' ');
-}
-while(next_per(n,s));
- 
-{
-for(int i=0;i<n;i++) free (s[i]);
-free(s); return 0;
-}
-}
-
-
-
-
-
+```python
+      #include<stdio.h> 
+      #include<string.h> 
+      #include<stdlib.h>
+      int next_per(int n, char **s)
+      {
+      for(int i = n - 1 ; i > 0 ; i--) 
+      if(strcmp(s[i],s[i-1]) > 0)
+      {
+      int j=i+1;
+      for(;j<n;j++) 
+      if (strcmp(s[j],s[i-1])<=0) 
+      break; 
+      char *t=s[i-1];
+      s[i-1]=s[j-1];
+      s[j-1]=t;
+      for(;i<n-1;i++,n--)
+      {
+      t=s[i]; s[i]=s[n-1]; s[n-1]=t;
+      }
+      return 1;
+      }
+      for(int i=0;i<n-1;i++,n--)
+      {
+      char *t=s[i]; s[i]=s[n-1]; s[n-1]=t;
+      }
+      return 0;
+      }
+      int main()
+      {
+      char **s; 
+      int n;
+      scanf("%d",&n); 
+      s=calloc(n,sizeof(char*)); 
+      for(int i=0;i<n;i++)
+      {
+      s[i]=calloc(n,sizeof(char*)*5); 
+      scanf("%s",s[i]);
+      }
+      do
+      {
+      for(int i=0;i<n;i++) 
+      printf("%s%c",s[i],i==n-1?'\n':' ');
+      }
+      while(next_per(n,s));
+       
+      {
+      for(int i=0;i<n;i++) 
+      free (s[i]);
+      free(s); 
+      return 0;
+      }
+      }
+```      
 
 
 Output:
 
 
-
-
-![437298014-b76024b3-2267-4403-bcb0-430d4bba9ebd](https://github.com/user-attachments/assets/29b5d58c-3a97-4ea0-b67a-49959c8f8776)
+![image](https://github.com/user-attachments/assets/18e73a0e-0feb-4526-a414-8b2e89ac98ef)
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program to print all of its permutations in strict lexicographical order is verified successfully
+
+
  
-EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
+EXP NO:9 D PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
 SHOWN BELOW.
 Aim:
 To write a C program to print a pattern of numbers from 1 to n as shown below.
@@ -220,47 +244,41 @@ Algorithm:
 7.	End
  
 Program:
-
- #include<stdio.h> 
- int main()
- {
-     int n,i,j,min; 
-     scanf("%d",&n);
-     int len=n*2-1; 
-     for (i=0;i<len;i++)
-     {
-        for (j=0;j<len;j++)
-        {
-          min=i<j?i:j;
-          min=min<len-i-1?min:len-1-i; 
-          min=min<len-j-1?min:len-1-j; 
-          printf("%d ",n-min);
-        }
-        printf("\n");
-    }
-    return 0;
- }
-
-
-
-
+```python
+      #include<stdio.h> 
+      int main()
+      {
+         int n,i,j,min; 
+         scanf("%d",&n);
+         int len=n*2-1; 
+         for (i=0;i<len;i++)
+         {
+           for (j=0;j<len;j++)
+           {
+             min=i<j?i:j;
+             min=min<len-i-1?min:len-1-i; 
+             min=min<len-j-1?min:len-1-j; 
+             printf("%d ",n-min);
+            }
+            printf("\n");
+          }
+         return 0;
+      }
+```
 
 
 Output:
 
 
-
-
-
-
-![437298228-2a1e29c2-674c-4db6-98ff-ec75254ec16b](https://github.com/user-attachments/assets/e7f12baa-0927-4f96-9a32-31d7680cc0e6)
-
+![image](https://github.com/user-attachments/assets/71d6c8e3-8afe-427a-836b-85341d202e45)
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program to print a pattern of numbers from 1 to n as shown below is verified successfully.
 
-EXP NO:10 C PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
+
+
+EXP NO:10 E PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
 
 Aim:
 
@@ -280,38 +298,33 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
+```python
 
-#include <stdio.h>
-void square();
-int main(){
-    
-    square();
-    return 0;
-}
-void square(){
-    int a;
-    scanf("%d",&a);
-    float ans = a*a;
-    printf("The square of %d is : %.2f",a,ans);
-}
-
-
-
-
+      #include <stdio.h>
+      void square();
+      int main(){
+          
+          square();
+          return 0;
+      }
+      void square(){
+          int a;
+          scanf("%d",&a);
+          float ans = a*a;
+          printf("The square of %d is : %.2f",a,ans);
+      }
+```
 
 
 Output:
 
 
-![437298363-4bae1a73-c122-47ea-a3b2-e6887d990718](https://github.com/user-attachments/assets/6627979b-6e92-4371-b218-da7008beadf8)
-
-
-
-
+![image](https://github.com/user-attachments/assets/a52ef355-b6bb-48e0-a20c-edaa2b5bf6ac)
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program that calculates the square of a number using a function that does not take any arguments is verified successfully.
+
 
 
 
