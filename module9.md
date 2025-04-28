@@ -1,3 +1,8 @@
+```python
+Developed By  :  Kishorekumar S
+Register No   :  212224040162
+```
+
 EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
 Aim:
@@ -12,24 +17,32 @@ Algorithm:
 7.	Use the display function to visualize the stack's contents
  
 Program:
-               int stack[40],top,i; 
-               void display(){
-               for(i=top;i>=0;i--){
-                    printf("%d\n",stack[i]);
-               }
-               }
-
-
-
+```python
+  float stack[100];
+  int top;
+  void display()
+  {
+      if(top==-1)
+      {
+          printf("stack is empty");
+      }
+      else
+      {
+          for(int i=2;i>=0;i--)
+          {
+              printf("%.1f\n",stack[i]);
+          }
+      }
+  }
+```
 Output:
 
-
-![437299558-8289921e-dbd8-4b42-ba85-24d2fc65abd0](https://github.com/user-attachments/assets/eafffd68-3380-4f61-b089-3d5e707a7c9c)
-
+![image](https://github.com/user-attachments/assets/8648d465-07fd-4cd0-a5ce-cd4408967da2)
 
 
 Result:
 Thus, the program to display stack elements using an array is verified successfully.
+
  
 
 EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.
@@ -42,33 +55,30 @@ Algorithm:
 4.	Call the push function as needed.
  
 Program:
-
-      int size=3,top=1;
-      float stack[40];
-      void push (float data)
+```python
+  char stack[100];
+  int size=3,top=-1,i;
+  void push (char data)
+  {
+      if(top==size-1)
       {
-      if (top==size-1 )
-      {
-      printf("stack is full\n");
+          printf("stack is full\n");
       }
       else
       {
-      top ++; 
-      stack[top] = data;
+          top++;
+          stack[top]=data;
       }
-      }
-
-
-
+  }
+```
 Output:
 
-![437299920-bcb94def-bec5-4b67-84d7-e0d88d565478](https://github.com/user-attachments/assets/e2308d04-ba6f-47b3-b456-1b16557b0b40)
-
-
+![image](https://github.com/user-attachments/assets/2e467ddc-5232-4e25-8932-94f6e375ede1)
 
 
 Result:
 Thus, the program to push the given element in to a stack using array is verified successfully
+
 
 
  
@@ -83,32 +93,33 @@ Algorithm:
 4.	Call the display function and perform other queue operations as needed.
  
 Program:
-
-            int queue[50], rear, front,i; void display()
-            {
-            if(front==-1)
-            {
-            printf("No elements to display");
-            }
-            else
-            {
-            for(i=front;i<=rear;i++)
-            {
-            printf("%d ",queue[i]);
-            }
-            }
-            }
-
-
-
+```python
+  char queue[50];
+  int front=-1;
+  int rear=-1;
+  void display()
+  {
+      if(rear==-1)
+      {
+          printf("No elements to display");
+      }
+      else
+      {
+          for(int i=front;i<=rear;i++)
+          {
+              printf("%c ",queue[i]);
+          }
+      }
+  }
+```
 Output:
 
+![image](https://github.com/user-attachments/assets/b05c03b2-f163-4338-9b70-7d5444e37839)
 
-
-![437300058-f0829e0d-795a-4dff-8e8f-a34da1e57e67](https://github.com/user-attachments/assets/f81fcb78-db2a-412e-9626-55afd1361e7f)
 
 Result:
 Thus, the program to display queue elements using array is verified successfully.
+
 
 
  
@@ -123,26 +134,25 @@ Algorithm:
 4.	Call the enqueue function as needed.
 
 Program:
-
-        int size=4, rear=-1, front=-1; float queue[50];
-        void enqueue(float data)
-        {
-        if(rear<size)
-        {
-        if(front==-1)
-        {
-        front=0;
-        }
-        rear=rear+1; queue[rear]=data;
-        }
-        }
-
-
+```python
+  int queue[50];
+  int front,rear,size=10;
+  void enqueue(int data)
+  {
+      if(rear<size)
+      {
+          if(front==-1)
+          {
+              front=0;
+          }
+          rear++;
+          queue[rear]=data;
+      }
+  }
+```
 Output:
 
-![437300223-17ad899f-3cee-4671-bafc-3d34549b5663](https://github.com/user-attachments/assets/9f317482-52a5-4a30-b2b0-b31ef612d268)
-
-
+![image](https://github.com/user-attachments/assets/70fc88fb-2ff9-4459-8c40-9e0b424bd51a)
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -151,8 +161,6 @@ Thus, the program to insert elements in queue using array is verified successful
 
  
 EXP NO:15 C FUNCTION TO DELETE ELEMENTS IN QUEUE USING ARRAY
-
-
 
 Aim:
 
@@ -170,28 +178,26 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 4.	End the Function.
 
 
-
 Program:
-
-      int front, rear;
-      void dequeue()
+```python
+  int front, rear;
+  void dequeue()
+  {
+      if(front==-1)
       {
-          if(front==-1&&rear==-1)
-          printf("Queue Underflow.");
-          else if(front==rear)
-          front=rear=-1;
-          else{
-              front=front+1;
-          }
+          printf("No elemets to display");
       }
-
-
+      else
+      {
+          front++;
+      }
+  }
+```
 Output:
 
-
-![437300375-45cdb758-4f6c-4d77-9906-497b86651213](https://github.com/user-attachments/assets/b26b1b35-dcce-45b0-9474-662f8f09401a)
-
+![image](https://github.com/user-attachments/assets/4dedf659-7b90-4164-b06a-df8cc088e819)
 
 
 Result:
 Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
+
